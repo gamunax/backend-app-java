@@ -20,11 +20,13 @@ public class Client implements Serializable {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  private String nombre;
-  private String apellido;
+  private String name;
+
+  @Column(name="last_name")
+  private String lastName;
   private String email;
 
-  @Column(name="create_at")
+  @Column(name = "create_at")
   @Temporal(TemporalType.DATE)
   private Date createAt;
 
@@ -36,20 +38,20 @@ public class Client implements Serializable {
     this.id = id;
   }
 
-  public String getNombre() {
-    return nombre;
+  public String getName() {
+    return name;
   }
 
-  public void setNombre(String nombre) {
-    this.nombre = nombre;
+  public void setName(String name) {
+    this.name = name;
   }
 
-  public String getApellido() {
-    return apellido;
+  public String getLastName() {
+    return lastName;
   }
 
-  public void setApellido(String apellido) {
-    this.apellido = apellido;
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
   }
 
   public String getEmail() {
